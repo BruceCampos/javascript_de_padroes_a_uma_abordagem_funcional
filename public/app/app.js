@@ -1,5 +1,5 @@
 import "./utils/array-helpers.js";
-import { delay, timeoutPromisse, retry } from "./utils/promise-helpers.js";
+import { timeoutPromisse, retry } from "./utils/promise-helpers.js";
 import { notasService } from "./nota/service.js";
 import {
   debounceTime,
@@ -23,4 +23,6 @@ const action = operations(() =>
 document.querySelector("#myButton").onclick = action;
 
 EventEmitter.on("itensTotalizados", console.log);
-EventEmitter.on("itensTotalizados", (total) => alert(`Total de itens: ${total}`));
+EventEmitter.on("itensTotalizados", (total) =>
+  alert(`Total de itens: ${total}`)
+);
